@@ -24,7 +24,7 @@
 max_time = 120
 def label = "mypod-${UUID.randomUUID().toString()}"
 podTemplate(label: label){
-node('utility') {
+node(label) {
   // Loading the utilities requires a node context unfortunately
   checkout scm
   utils = load('ci/Jenkinsfile_utils.groovy')
